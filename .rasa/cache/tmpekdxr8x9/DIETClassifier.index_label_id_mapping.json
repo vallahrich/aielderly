@@ -1,0 +1,9 @@
+{
+  "0": "ask_time",
+  "1": "emergency",
+  "2": "goodbye",
+  "3": "greet",
+  "4": "provide_health_tip",
+  "5": "set_reminder",
+  "6": "tell_joke"
+}

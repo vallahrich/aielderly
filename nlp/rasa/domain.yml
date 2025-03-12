@@ -1,0 +1,132 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thankyou
+  - help
+  - ask_time
+  - ask_weather
+  - set_reminder
+  - tell_joke
+  - provide_health_tip
+  - emergency
+  - CheckWeather
+  - SetReminder
+  - ReadNews
+  - MakeCall
+  - General
+  - Time
+
+entities:
+  - time
+  - day
+  - contact
+  - location
+
+slots:
+  time:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: time
+  
+  day:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: day
+      
+  contact:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: contact
+      
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: location
+
+responses:
+  utter_greet:
+    - text: "Hallo! Wie kann ich Ihnen helfen?"
+    - text: "Guten Tag! Womit kann ich Ihnen behilflich sein?"
+    - text: "Grüß Gott! Was kann ich für Sie tun?"
+
+  utter_goodbye:
+    - text: "Auf Wiedersehen! Haben Sie einen schönen Tag."
+    - text: "Bis bald! Passen Sie auf sich auf."
+    - text: "Tschüss! Ich freue mich auf unser nächstes Gespräch."
+
+  utter_youre_welcome:
+    - text: "Gern geschehen!"
+    - text: "Keine Ursache."
+    - text: "Bitte sehr!"
+
+  utter_help:
+    - text: "Ich kann Ihnen mit verschiedenen Dingen helfen. Sie können nach dem Wetter fragen, Erinnerungen setzen oder die Uhrzeit erfragen."
+    - text: "Ich bin Ihr persönlicher Assistent. Ich kann Wetter, Uhrzeit und Erinnerungen für Sie verwalten."
+
+  utter_default:
+    - text: "Entschuldigung, das habe ich nicht verstanden."
+    - text: "Könnten Sie das bitte wiederholen?"
+    - text: "Tut mir leid, ich verstehe nicht, was Sie meinen."
+
+  utter_time:
+    - text: "Es ist jetzt {time} Uhr."
+
+  utter_weather:
+    - text: "Heute scheint die Sonne bei angenehmen 22 Grad."
+    - text: "Es ist leicht bewölkt mit Temperaturen um 18 Grad."
+
+  utter_emergency_help:
+    - text: "Ich verstehe, dass es ein Notfall ist. Soll ich den Notruf 112 für Sie wählen?"
+
+  utter_joke:
+    - text: "Warum können Skelette so schlecht lügen? Weil man sie leicht durchschauen kann!"
+    - text: "Was macht ein Clown im Büro? Faxen!"
+    - text: "Treffen sich zwei Magnete. Sagt der eine: 'Was soll ich heute bloß anziehen?'"
+
+  utter_health_tip:
+    - text: "Trinken Sie täglich genügend Wasser, mindestens 1,5 Liter."
+    - text: "Regelmäßige Bewegung hält Ihren Kreislauf in Schwung."
+    - text: "Achten Sie auf eine ausgewogene Ernährung mit viel Obst und Gemüse."
+
+  utter_ask_call_who:
+    - text: "Wen möchten Sie anrufen?"
+
+  utter_ask_reminder_time:
+    - text: "Für wann soll ich die Erinnerung setzen?"
+
+  utter_default_weather:
+    - text: "An Ihrem aktuellen Standort ist es heute sonnig bei 22 Grad."
+    
+  utter_thank:
+    - text: "Gerne!"
+    - text: "Bitte schön!"
+    
+  utter_general:
+    - text: "Ich verstehe. Kann ich Ihnen mit etwas anderem helfen?"
+
+actions:
+  - action_tell_time
+  - action_greet
+  - action_goodbye
+  - action_tell_weather
+  - action_thank_you
+  - action_help
+  - action_make_call
+  - action_check_weather
+  - action_set_reminder
+  - action_read_news
+  - action_get_time
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

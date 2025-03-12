@@ -1,0 +1,76 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "CheckWeather": 0,
+        "General": 1,
+        "Goodbye": 2,
+        "Greeting": 3,
+        "Help": 4,
+        "MakeCall": 5,
+        "ReadNews": 6,
+        "SetReminder": 7,
+        "ThankYou": 8,
+        "Time": 9,
+        "back": 10,
+        "nlu_fallback": 11,
+        "out_of_scope": 12,
+        "restart": 13,
+        "session_start": 14
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_greet": 13,
+        "utter_goodbye": 14,
+        "utter_thank": 15,
+        "utter_weather": 16,
+        "utter_default_weather": 17,
+        "utter_set_reminder": 18,
+        "utter_ask_reminder_time": 19,
+        "utter_help": 20,
+        "utter_time": 21,
+        "utter_default_time": 22,
+        "utter_news": 23,
+        "utter_make_call": 24,
+        "utter_ask_call_who": 25,
+        "utter_general": 26,
+        "utter_default": 27,
+        "action_check_weather": 28,
+        "action_set_reminder": 29,
+        "action_get_time": 30,
+        "action_read_news": 31,
+        "action_make_call": 32
+      },
+      "entities": {
+        "contact": 0,
+        "date": 1,
+        "location": 2,
+        "time": 3
+      },
+      "slots": {
+        "contact_0": 0,
+        "location_0": 1,
+        "time_0": 2,
+        "date_0": 3
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

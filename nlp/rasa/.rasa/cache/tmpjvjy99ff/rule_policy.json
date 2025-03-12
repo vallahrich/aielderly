@@ -1,0 +1,48 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"General\"}}]": "utter_general",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"General\"}}, {\"prev_action\": {\"action_name\": \"utter_general\"}, \"user\": {\"intent\": \"General\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_time\"}}]": "action_tell_time",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_time\"}}, {\"prev_action\": {\"action_name\": \"action_tell_time\"}, \"user\": {\"intent\": \"ask_time\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"location\": [1.0]}, \"user\": {\"intent\": \"CheckWeather\"}}]": "action_check_weather",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"location\": [1.0]}, \"user\": {\"intent\": \"CheckWeather\"}}, {\"prev_action\": {\"action_name\": \"action_check_weather\"}, \"slots\": {\"location\": [1.0]}, \"user\": {\"intent\": \"CheckWeather\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Time\"}}]": "action_get_time",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Time\"}}, {\"prev_action\": {\"action_name\": \"action_get_time\"}, \"user\": {\"intent\": \"Time\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"location\": \"should_not_be_set\"}, \"user\": {\"intent\": \"CheckWeather\"}}]": "utter_default_weather",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"location\": \"should_not_be_set\"}, \"user\": {\"intent\": \"CheckWeather\"}}, {\"prev_action\": {\"action_name\": \"utter_default_weather\"}, \"slots\": {\"location\": \"should_not_be_set\"}, \"user\": {\"intent\": \"CheckWeather\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "action_greet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"action_greet\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"thankyou\"}}]": "action_thank_you",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"thankyou\"}}, {\"prev_action\": {\"action_name\": \"action_thank_you\"}, \"user\": {\"intent\": \"thankyou\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"emergency\"}}]": "utter_emergency_help",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"emergency\"}}, {\"prev_action\": {\"action_name\": \"utter_emergency_help\"}, \"user\": {\"intent\": \"emergency\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"help\"}}]": "action_help",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"help\"}}, {\"prev_action\": {\"action_name\": \"action_help\"}, \"user\": {\"intent\": \"help\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"tell_joke\"}}]": "utter_joke",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"tell_joke\"}}, {\"prev_action\": {\"action_name\": \"utter_joke\"}, \"user\": {\"intent\": \"tell_joke\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ReadNews\"}}]": "action_read_news",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ReadNews\"}}, {\"prev_action\": {\"action_name\": \"action_read_news\"}, \"user\": {\"intent\": \"ReadNews\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"contact\": [1.0]}, \"user\": {\"intent\": \"MakeCall\"}}]": "action_make_call",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"contact\": [1.0]}, \"user\": {\"intent\": \"MakeCall\"}}, {\"prev_action\": {\"action_name\": \"action_make_call\"}, \"slots\": {\"contact\": [1.0]}, \"user\": {\"intent\": \"MakeCall\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"provide_health_tip\"}}]": "utter_health_tip",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"provide_health_tip\"}}, {\"prev_action\": {\"action_name\": \"utter_health_tip\"}, \"user\": {\"intent\": \"provide_health_tip\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_weather\"}}]": "action_tell_weather",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_weather\"}}, {\"prev_action\": {\"action_name\": \"action_tell_weather\"}, \"user\": {\"intent\": \"ask_weather\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"contact\": \"should_not_be_set\"}, \"user\": {\"intent\": \"MakeCall\"}}]": "utter_ask_call_who",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"contact\": \"should_not_be_set\"}, \"user\": {\"intent\": \"MakeCall\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_call_who\"}, \"slots\": {\"contact\": \"should_not_be_set\"}, \"user\": {\"intent\": \"MakeCall\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"action_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"emergency\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"emergency\"}}, {\"prev_action\": {\"action_name\": \"utter_emergency_help\"}, \"user\": {\"intent\": \"emergency\"}}]",
+      "predicting default action with intent session_start",
+      "predicting default action with intent restart"
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hallo
+    - Hi
+    - Guten Morgen
+    - Guten Tag
+    - Guten Abend
+    - Grüß Gott
+    - Moin
+    - Hey
+    - Hallo, wie geht's?
+    - Servus
+    - Grüß dich
+    - Hallo zusammen
+
+- intent: goodbye
+  examples: |
+    - Auf Wiedersehen
+    - Tschüss
+    - Bis später
+    - Bis bald
+    - Bis zum nächsten Mal
+    - Mach's gut
+    - Auf Wiederhören
+    - Ciao
+    - Adieu
+    - Tschau
+    - Wir hören uns später
+
+- intent: thankyou
+  examples: |
+    - Danke
+    - Vielen Dank
+    - Danke schön
+    - Danke sehr
+    - Herzlichen Dank
+    - Ich danke dir
+    - Ich danke Ihnen
+    - Danke für die Hilfe
+    - Das ist sehr hilfreich, danke
+    - Danke für die Information
+
+- intent: help
+  examples: |
+    - Ich brauche Hilfe
+    - Kannst du mir helfen?
+    - Hilfe
+    - Was kannst du tun?
+    - Was sind deine Funktionen?
+    - Wie funktionierst du?
+    - Ich weiß nicht, was ich tun soll
+    - Was kann ich fragen?
+    - Welche Fragen kann ich stellen?
+    - Ich bin verwirrt
+    - Zeig mir, was du kannst
+
+- intent: ask_time
+  examples: |
+    - Wie spät ist es?
+    - Wie viel Uhr ist es?
+    - Wie spät haben wir es?
+    - Sag mir die Uhrzeit
+    - Kannst du mir sagen, wie spät es ist?
+    - Uhrzeit
+    - Zeit
+    - Aktuelle Uhrzeit
+    - Hast du die Uhrzeit?
+    - Wie viel Uhr?
+    - Wie spät?
+    - Wieviel Uhr haben wir?
+
+- intent: ask_weather
+  examples: |
+    - Wie ist das Wetter?
+    - Wie wird das Wetter heute?
+    - Wie ist das Wetter draußen?
+    - Regnet es?
+    - Scheint die Sonne?
+    - Wie sind die Temperaturen heute?
+    - Muss ich einen Regenschirm mitnehmen?
+    - Wird es heute regnen?
+    - Wie wird das Wetter morgen?
+    - Wetterbericht
+    - Wie warm ist es draußen?
+    - Ist es kalt draußen?
+
+- intent: set_reminder
+  examples: |
+    - Erinnere mich an einen Termin
+    - Ich möchte eine Erinnerung setzen
+    - Setze eine Erinnerung für morgen
+    - Kannst du mich erinnern?
+    - Nicht vergessen
+    - Ich muss mich erinnern an
+    - Termin eintragen
+    - Erinnerung für meine Medikamente
+    - Bitte erinnere mich an
+    - Ich habe einen Arzttermin
+    - Erinnerung für [Montag](day) um [10 Uhr](time)
+    - Vergiss nicht, mich zu erinnern
+
+- intent: tell_joke
+  examples: |
+    - Erzähl mir einen Witz.
+    - Mach mich bitte zum Lachen.
+    - Hast du einen lustigen Spruch?
+    - Ich brauche einen Witz, bitte.
+    - Kannst du mir etwas Witziges sagen?
+
+- intent: provide_health_tip
+  examples: |
+    - Hast du einen Gesundheitstipp für mich?
+    - Wie kann ich meine Gesundheit verbessern?
+    - Gib mir einen Tipp für einen gesunden Lebensstil.
+    - Was sollte ich tun, um gesund zu bleiben?
+    - Bitte teile einen Gesundheitstipp mit mir.
+
+- intent: emergency
+  examples: |
+    - Ich brauche dringend Hilfe.
+    - Notfall! Hilfe ist benötigt.
+    - Ich befinde mich in einer Notsituation.
+    - Hilfe! Es ist ein Notfall.
+    - Es tut sich etwas, Hilfe bitte!

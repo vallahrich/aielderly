@@ -1,0 +1,108 @@
+version: "3.1"
+
+rules:
+  - rule: Greet the user
+    steps:
+      - intent: greet
+      - action: action_greet
+
+  - rule: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: action_goodbye
+
+  - rule: Thank you
+    steps:
+      - intent: thankyou
+      - action: action_thank_you
+
+  - rule: Provide help
+    steps:
+      - intent: help
+      - action: action_help
+
+  - rule: Tell the time
+    steps:
+      - intent: ask_time
+      - action: action_tell_time
+
+  - rule: Tell the time (legacy)
+    steps:
+      - intent: Time
+      - action: action_get_time
+
+  - rule: Tell the weather
+    steps:
+      - intent: ask_weather
+      - action: action_tell_weather
+
+  - rule: Tell a joke
+    steps:
+      - intent: tell_joke
+      - action: utter_joke
+
+  - rule: Provide health tip
+    steps:
+      - intent: provide_health_tip
+      - action: utter_health_tip
+
+  - rule: Handle emergency
+    steps:
+      - intent: emergency
+      - action: utter_emergency_help
+
+  - rule: Check weather with location
+    condition:
+      - slot_was_set:
+          - location: null
+    steps:
+      - intent: CheckWeather
+      - action: utter_default_weather
+
+  - rule: Check weather with location provided
+    steps:
+      - intent: CheckWeather
+      - slot_was_set:
+          - location: Berlin
+      - action: action_check_weather
+
+  # Remove or comment out the multi-turn reminder rules
+  # - rule: Set reminder
+  #   steps:
+  #     - intent: SetReminder
+  #     - action: utter_ask_reminder_time
+  #     - slot_was_set:
+  #         - time: ".*"
+  #     - action: action_set_reminder
+
+  # - rule: Set reminder prompt
+  #   steps:
+  #     - intent: SetReminder
+  #     - action: utter_ask_reminder_time
+  #     - slot_was_set:
+  #         - time: null
+
+  - rule: Read news
+    steps:
+      - intent: ReadNews
+      - action: action_read_news
+
+  - rule: Make call with contact
+    condition:
+      - slot_was_set:
+          - contact: null
+    steps:
+      - intent: MakeCall
+      - action: utter_ask_call_who
+
+  - rule: Make call with contact provided
+    steps:
+      - intent: MakeCall
+      - slot_was_set:
+          - contact: Peter
+      - action: action_make_call
+
+  - rule: Answer general questions
+    steps:
+      - intent: General
+      - action: utter_general

@@ -1,0 +1,70 @@
+{
+    "app": {
+        "name": "SeniorVoice",
+        "version": "0.1.0",
+        "description": "Voice assistant for elderly German users",
+        "log_level": "INFO",
+        "confirm_critical_commands": true,
+        "default_language": "de-DE",
+        "text_input_mode": true,
+        "confidence_threshold": 0.6
+    },
+    "asr": {
+        "model_name": "facebook/wav2vec2-large-xlsr-53-german",
+        "fine_tuned_model_path": "",
+        "sample_rate": 16000,
+        "chunk_size": 1024,
+        "record_seconds": 5,
+        "silence_threshold": 500,
+        "silence_duration": 1.0,
+        "temp_dir": "temp/asr"
+    },
+    "nlu": {
+        "model_dir": "models/rasa",
+        "training_data_path": "data/nlu.yml",
+        "rasa_config_path": "nlu/config.yml",
+        "confidence_threshold": 0.6,
+        "fallback_intent": "Help"
+    },
+    "tts": {
+        "engine": "pyttsx3",
+        "language": "de",
+        "voice_id": "",
+        "rate": 150,
+        "volume": 1.0,
+        "temp_dir": "temp/tts"
+    },
+    "responses": {
+        "greeting": [
+            "Hallo! Wie kann ich Ihnen helfen?",
+            "Guten Tag! Womit kann ich Ihnen behilflich sein?",
+            "Grüß Gott! Was kann ich für Sie tun?"
+        ],
+        "goodbye": [
+            "Auf Wiedersehen! Haben Sie einen schönen Tag.",
+            "Bis bald! Passen Sie auf sich auf.",
+            "Tschüss! Ich freue mich auf unser nächstes Gespräch."
+        ],
+        "thankyou": [
+            "Gern geschehen!",
+            "Keine Ursache.",
+            "Bitte sehr!"
+        ],
+        "help": [
+            "Ich kann Ihnen mit verschiedenen Dingen helfen. Sie können nach dem Wetter fragen, Erinnerungen setzen oder die Uhrzeit erfragen.",
+            "Ich bin Ihr persönlicher Assistent. Ich kann Wetter, Uhrzeit und Erinnerungen für Sie verwalten."
+        ],
+        "unknown": [
+            "Entschuldigung, das habe ich nicht verstanden.",
+            "Könnten Sie das bitte wiederholen?",
+            "Tut mir leid, ich verstehe nicht, was Sie meinen."
+        ],
+        "weather": [
+            "Heute scheint die Sonne bei angenehmen 22 Grad.",
+            "Es ist leicht bewölkt mit Temperaturen um 18 Grad."
+        ],
+        "time": [
+            "Es ist jetzt {time} Uhr."
+        ]
+    }
+}

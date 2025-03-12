@@ -1,0 +1,95 @@
+version: "3.1"
+
+stories:
+  - story: Test greeting and goodbye
+    steps:
+      - user: |
+          Hallo
+        intent: Greeting
+      - action: utter_greet
+      - user: |
+          Auf Wiedersehen
+        intent: Goodbye
+      - action: utter_goodbye
+
+  - story: Test checking weather with location
+    steps:
+      - user: |
+          Wie ist das Wetter in Berlin?
+        intent: CheckWeather
+        entities:
+          - location: Berlin
+      - slot_was_set:
+          - location: Berlin
+      - action: action_check_weather
+      - user: |
+          Danke
+        intent: ThankYou
+      - action: utter_thank
+
+  - story: Test weather without location
+    steps:
+      - user: |
+          Wie ist das Wetter heute?
+        intent: CheckWeather
+      - action: utter_default_weather
+      - user: |
+          In München
+        intent: CheckWeather
+        entities:
+          - location: München
+      - slot_was_set:
+          - location: München
+      - action: action_check_weather
+
+  - story: Test setting a reminder
+    steps:
+      - user: |
+          Erinnere mich an meine Medikamente
+        intent: SetReminder
+      - action: utter_ask_reminder_time
+      - user: |
+          Um 18 Uhr
+        intent: SetReminder
+        entities:
+          - time: "18 Uhr"
+      - slot_was_set:
+          - time: "18 Uhr"
+      - action: action_set_reminder
+
+  - story: Test asking for help
+    steps:
+      - user: |
+          Hilfe
+        intent: Help
+      - action: utter_help
+      - user: |
+          Ich möchte die Uhrzeit wissen
+        intent: Time
+      - action: action_get_time
+
+  - story: Test making a call
+    steps:
+      - user: |
+          Rufe meine Tochter an
+        intent: MakeCall
+        entities:
+          - contact: "meine Tochter"
+      - slot_was_set:
+          - contact: "meine Tochter"
+      - action: action_make_call
+      - user: |
+          Danke schön
+        intent: ThankYou
+      - action: utter_thank
+
+  - story: Test getting news
+    steps:
+      - user: |
+          Was gibt es Neues?
+        intent: ReadNews
+      - action: action_read_news
+      - user: |
+          Danke für die Information
+        intent: ThankYou
+      - action: utter_thank

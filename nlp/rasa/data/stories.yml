@@ -1,0 +1,115 @@
+version: "3.1"
+
+stories:
+  - story: greet and ask time
+    steps:
+      - intent: greet
+      - action: action_greet
+      - intent: ask_time
+      - action: action_tell_time
+      - intent: thankyou
+      - action: action_thank_you
+      - intent: goodbye
+      - action: action_goodbye
+
+  - story: direct time inquiry
+    steps:
+      - intent: ask_time
+      - action: action_tell_time
+      - intent: thankyou
+      - action: action_thank_you
+
+  - story: weather inquiry
+    steps:
+      - intent: ask_weather
+      - action: action_tell_weather
+      - intent: thankyou
+      - action: action_thank_you
+
+  - story: help inquiry
+    steps:
+      - intent: help
+      - action: action_help
+      - intent: thankyou
+      - action: action_thank_you
+
+  - story: joke and goodbye
+    steps:
+      - intent: tell_joke
+      - action: utter_joke
+      - intent: thankyou
+      - action: action_thank_you
+      - intent: goodbye
+      - action: action_goodbye
+
+  - story: health tip
+    steps:
+      - intent: provide_health_tip
+      - action: utter_health_tip
+
+  - story: reminder setting
+    steps:
+      - intent: greet
+      - action: action_greet
+      - intent: set_reminder
+      - action: utter_ask_reminder_time
+      - intent: set_reminder
+        entities:
+          - time: "18 Uhr"
+      - slot_was_set:
+          - time: "18 Uhr"
+      - action: action_set_reminder
+      - intent: thankyou
+      - action: action_thank_you
+
+  - story: ask for time and news
+    steps:
+      - intent: greet
+      - action: action_greet
+      - intent: ask_time
+      - action: action_tell_time
+      - intent: ReadNews
+      - action: action_read_news
+      - intent: thankyou
+      - action: action_thank_you
+      - intent: goodbye
+      - action: action_goodbye
+
+  - story: make a call
+    steps:
+      - intent: greet
+      - action: action_greet
+      - intent: MakeCall
+      - action: utter_ask_call_who
+      - intent: MakeCall
+        entities:
+          - contact: "meine Tochter"
+      - slot_was_set:
+          - contact: "meine Tochter"
+      - action: action_make_call
+      - intent: thankyou
+      - action: action_thank_you
+
+  - story: help request followed by weather check
+    steps:
+      - intent: help
+      - action: action_help
+      - intent: CheckWeather
+      - action: utter_default_weather
+      - intent: CheckWeather
+        entities:
+          - location: München
+      - slot_was_set:
+          - location: München
+      - action: action_check_weather
+
+  - story: general conversation
+    steps:
+      - intent: greet
+      - action: action_greet
+      - intent: General
+      - action: utter_general
+      - intent: thankyou
+      - action: action_thank_you
+      - intent: goodbye
+      - action: action_goodbye
